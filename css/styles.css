@@ -1,0 +1,7 @@
+.reveal ul ul { margin-bottom: 1em;}
+.reveal ul,
+.reveal ol { line-height: 1.5}
+.reveal section img { 
+  background: none;
+  border: none;
+}

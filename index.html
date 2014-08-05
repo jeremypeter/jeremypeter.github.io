@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>The Facade Pattern</title>
+		<title>Meltmedia Email Process</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/styles.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,89 +43,125 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				
 				<section>
-					<h1>The Facade Pattern</h1>
-					<h3></h3>
-					<p>
-						<small>Brought to you by <a href="http://hakim.se">Jeremy Peter</a> / <a href="http://twitter.com/jeremywpeter">@jeremywpeter</a></small>
-					</p>
-
-					<aside class="notes">
-						 It's a really simple pattern to understand. So much so that you've probably used it without even knowing it. 
-					</aside>
+					<img src="http://meltmedia.com/_themes/melt/img/hero-meltmedia-logo.png" style="width: 20%; height: auto;">
+					<h1>Email Process</h1>
 				</section>
+				<!-- slide 1 -->
 
 				<section>
 					<section>
-						<h2>So what is it?</h2>
-					</section>
-
-					<section>
-						<h2>Simple interface that handles complex actions</h2>
-
-						<aside class="notes">
-							Doesn't expose the complex inner workings of the code within it such as error checking or logging. It should just do all of that work for you.
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<h2>So let's see an example</h2>
-
-					<aside class="notes">
-						I'm just going to use the example on different ways to styling dom elements. 
-					</aside>
-				</section>
-
-				<section>
-					<section>
-						<h2>Pros</h2>						
-					</section>
-					<section>
-						<ul>
-							<li>Creates convenience functions/methods</li>
-							<li class="fragment">Code can be easier to understand and less prone to bugs</li>
-							<li class="fragment">Adds a layer of abstraction that shouldn't affect client code</li>
-						</ul>
-
-						<aside class="notes">
-							 These helper methods are basic abstraction that help each other out. Abstracting away code gives you flexibility because it allows you to reuse the code in multiple areas instead of having to repeatedly write it. And if you do it right, your code shouldn't conflict with outside classes or functions. 
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Cons</h2>						
-					</section>
-					<section>
-						<ul>
-							<li>Can get carried away with convenience methods</li>
-							<li class="fragment">Possible performance hit</li>
-						</ul>
-
-						<aside class="notes">
-							One instance is if your pulling in an entire library to only use a couple of their methods. It would probably be better to extract those methods out or just build them yourself to save on file size. So if you take jquery for example, the way they query an element is a lot slower if were to use the dom method getElementById().
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Common use cases</h2>
+						<h1>Code Editor</h1> 
+						<h2>Sublime Text</h2>
+						<img src="http://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png" >
 					</section>
 
 					<section>
 						<ul>
-							<li>API's</li>
-							<li class="fragment">Code refactoring</li>
+							<li>Plugin ecosystem</li>
+							<li>Boilerplates</li>
+							<li><a href="#/snippets">Code snippets</a></li>
 						</ul>
+					</section>
 
-						<aside class="notes">
-							A couple of common use cases where the facade design pattern can be found useful would be in creating api's. If you've ever heard of or used the library called jQuery, then you should know that they use this pattern thoroughly. Along with pretty much all the other javascript libraries out there. If you find yourself dealing with cross browser differences, then you'll want to think about using the facade pattern to create come helper methods that deal with those differences. Another instance that I can think of would be in code refactoring. If you ever find yourself with an overwhelming amount of code contained withing a function, perhaps you want to use the facade pattern and abstract some of the code into their own functions.
-						</aside>
+					<section id="snippets">
+						<img src="images/snippets.gif" >
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h1>Automation</h1>
+						<h2>with Gulpjs</h2>
+						<img src="images/gulpjslogo.png" >
+					</section>
+
+					<section>
+						<ol>
+							<li>Watches directory for changes</li>
+							<li>Checks for HTML errors</li>
+							<li>Inlines css</li>
+							<li>Minifies code</li>
+							<li>Tests code</li>
+							<li>Optional: send tests to Litmus</li>
+							<li>Optional: send to email address</li>
+						</ol>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Testing</h1>
+						<h2>with Mocha and Litmus</h2>
+						<img src="images/mocha-logo.png">
+						<img src="images/litmus-logo2.png">
+					</section>
+				</section>
+
+				<section>
+						
+					<section>
+						<h2>Mocha</h2>
+						<h4>Testing the code</h4>
+						<ul>
+							<li>Code minification</li>
+							<li>Special variables/tags</li>
+							<li>PRC code</li>
+							<li>Urls</li>
+							<li>MOC and CID codes</li>
+						</ul>
+					</section>	
+
+					<section>
+						<p>Failing</p>
+						<img src="images/failing.png" >
+					</section>
+
+					<section>
+						<p>Passing</p>
+						<img src="images/passing.png">
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Litmus</h2>	
+						
+						<h4>Visual testing</h4>
+						<ul>
+							<li class="fragment">
+								<span>Desktop Clients</span>
+								<ul>
+									<li>Apple Mail 6</li>
+									<li>Outlook 2003/2007/2010/2013</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								<span>Web-based Clients</span>
+								<ul>
+									<li>Outlook.com</li>
+									<li>Yahoo! Mail</li>
+									<li>Gmail</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								<span>Mobile Clients</span>
+								<ul>
+									<li>iPad</li>
+									<li>iPad Mini</li>
+									<li>iPhone 4s/5/5s</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="images/litmus.png" />
+					</section>
+				</section>
+
 
 			</div>
 
