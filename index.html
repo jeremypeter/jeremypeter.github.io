@@ -53,6 +53,7 @@
 
 					<section>
 						<h1>Drush</h1>
+            <p><a href="http://www.drush.org/en/master/">http://www.drush.org/en/master/</a></p>
             <p>Command line tool for interacting with Drupal. It can install, enable, disable modules/themes/profiles.</p>
 					</section>
 
@@ -82,7 +83,18 @@
 
           <section>
             <h1>Drush make</h1>
+            <p><a href="http://www.drush.org/en/master/make/">http://www.drush.org/en/master/make/</a></p>
             <p>An extension of drush which allows you take a config file and build your Drupal distribution/site around those configs.</p>
+          </section>
+
+          <section>
+            <ul>
+              <li>Downloading Drupal core from drupal.org</li>
+              <li>Checking code out from git repositories</li>
+              <li>Getting plain .tar.gz and .zip files </li>
+              <li>Fetching and applying patches</li>
+              <li>Fetching modules, themes</li>
+            </ul>
           </section>
 
           <section data-markdown>
@@ -93,11 +105,17 @@
             api = 2
 
             # The version of Drupal the profile is built for. 
-            core = 7.12
+            core = 7.x
 
             # The projects attribute is where you define the modules/themes that
             # are to be packaged with the profile.
-            projects[views] = 3.1
+            projects:
+              drupal:
+                version: 7.33
+
+            projects:
+              views:
+                version: 2.8
             ```
             </script>
           </section>
@@ -106,7 +124,8 @@
             <script type="text/template">
             ## Command to run
             ```bash
-            drush make config.make
+            # Build Drupal site at example/ path
+            drush make config.make.yml example/
             ```
             </script>
           </section>
@@ -115,6 +134,7 @@
 
           <section>
             <h1>Grunt Drupal Tasks</h1>
+            <p><a href="https://github.com/phase2/grunt-drupal-tasks">https://github.com/phase2/grunt-drupal-tasks</a></p>
             <p>Grunt plugin for common Drupal build and testing tasks</p>
           </section>
 
