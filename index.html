@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Meltmedia Email Process</title>
+		<title>Drupal</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -45,194 +45,111 @@
 			<div class="slides">
 				
 				<section>
-					<img src="http://meltmedia.com/assets/img/hero/hero-meltmedia-logo.png" style="width: 20%; height: auto;">
-					<h1>Email Process</h1>
+					<img src="https://events.drupal.org/sites/all/themes/da_events/losangeles2015/logo-front.png" style=" height: auto;">
+					<h1>Drupal Tools</h1>
 				</section>
-				<!-- slide 1 -->
-
-				<!-- <section>
-					<section>
-						<h1>Code Editor</h1> 
-						<h2>Sublime Text</h2>
-						<img src="http://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png" >
-					</section>
-
-					<section>
-						<ul>
-							<li>Plugin ecosystem</li>
-							<li>Boilerplates</li>
-							<li>Code snippets</li>
-						</ul>
-					</section>
-
-					<section id="snippets">
-						<p>Bullet list snippet</p>
-						<img src="images/snippets.gif" >
-					</section>
-				</section> -->
 
 				<section>
 
 					<section>
-						<h2>Boilerplates and Code Snippets</h2>
+						<h1>Drush</h1>
+            <p>Command line tool for interacting with Drupal. It can install, enable, disable modules/themes/profiles.</p>
 					</section>
 
-					<section>
-						<h2>Global Styles</h2>
-						<ul>
-							<li>Headers</li>
-							<li>Paragraphs</li>
-							<li>Bulleted Lists</li>
-							<li>Footnotes</li>
-						</ul>
+
+					<section data-markdown>
+						<script type="text/template">
+              ## Example commands
+              ```bash 
+              # Clears all cache
+              drush cc all
+
+              # Clears specific cache
+              drush cc menu
+
+              # List modules
+              drush pm-list
+
+              # Download a module
+              drush dl <module_name>
+
+              # Enable or disable a module
+              drush en <module_name>
+              drush dis <module_name>
+              ```
+            </script>
 					</section>
 
-					<section>
-						<p>Example of global styles</p>
-						<img src="images/boilerplate-global-styles.png" />
-					</section>
+          <section>
+            <h1>Drush make</h1>
+            <p>An extension of drush which allows you take a config file and build your Drupal distribution/site around those configs.</p>
+          </section>
 
-					<section>
-						<h2>Client Specific Styles</h2>
-						<ul>
-							<li>prevents font size changes</li>
-							<li>handles spacing issues</li>
-						</ul>
-					</section>
+          <section data-markdown>
+            <script type="text/template">
+            ## Example config
+            ```bash
+            # The Drush Make API version. This should always be 2.
+            api = 2
 
-					<section>
-						<p>Example of client specific styles</p>
-						<img src="images/boilerplate-client-styles.png" height="432" width="765" alt="">
-					</section>
+            # The version of Drupal the profile is built for. 
+            core = 7.12
 
-					<section>
-						<h2>Prestructured HTML</h2>
-						<img src="images/boilerplate-html.png" height="318" width="532" alt="">
-					</section>
+            # The projects attribute is where you define the modules/themes that
+            # are to be packaged with the profile.
+            projects[views] = 3.1
+            ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Command to run
+            ```bash
+            drush make config.make
+            ```
+            </script>
+          </section>
+
+
+
+          <section>
+            <h1>Grunt Drupal Tasks</h1>
+            <p>Grunt plugin for common Drupal build and testing tasks</p>
+          </section>
+
+          <section>
+            <h1>Benefits</h1>
+            <ul>
+              <li>Support Drupal 7 &amp; 8</li>
+              <li>Verifies code quality</li>
+              <li>Run tests</li>
+              <li>Project scaffolding</li>
+              <li>Can add your own custom configuration</li>
+              <li>Does require installation of Bundler, Composer, Ruby, and RubyGems</li>
+            </ul>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Example commands
+            ```bash
+            # Run PHP Lint and PHP Code Snifer
+            grunt validate
+
+            # Uses Compass to compile SASS files  
+            grunt compile-theme
+
+            # Run local server using drush
+            grunt drush:runserver
+
+            # Run tests with Drupal Behat extension
+            grunt test
+            ```
+            </script>
+          </section>
 					
-					<section>
-						<h1>Code Snippets</h1>
-					</section>
-					
-
-					<section id="snippets">
-						<p>Bullet list snippet</p>
-						<img src="images/snippets.gif" >
-					</section>
-					
 				</section>
-
-
-				<section>
-					<section>
-						<h1>Automation</h1>
-						<h2>with Gulpjs</h2>
-						<img src="images/gulpjslogo.png" >
-					</section>
-
-					<section>
-						<ol>
-							<li>Watches directory for changes</li>
-							<li>Checks for HTML errors</li>
-							<li>Inlines css</li>
-							<li>Minifies code</li>
-							<li>Encodes special characters</li>
-							<li>Tests code</li>
-							<li>Optional: send tests to Litmus</li>
-							<li>Optional: send to email address</li>
-						</ol>
-					</section>
-
-					<section>
-						<p>Unminified code</p>
-						<img src="images/unminfied.png" alt="">
-					</section>
-
-					<section>
-						<p>Minified code</p>
-						<img src="images/minified.png" alt="">
-					</section>
-
-					<section>
-						<p>Special character encoding</p>
-						<img src="images/encode.png" alt="">
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h1>Testing</h1>
-						<h2>with Mocha and Litmus</h2>
-						<img src="images/mocha-logo.png">
-						<img src="images/litmus-logo2.png">
-					</section>
-				</section>
-
-				<section>
-						
-					<section>
-						<h2>Mocha</h2>
-						<h4>Testing the code</h4>
-						<ul>
-							<li>Code minification</li>
-							<li>Special variables/tags</li>
-							<li>PRC code</li>
-							<li>Urls</li>
-							<li>MOC and CID codes</li>
-						</ul>
-					</section>	
-
-					<section>
-						<p>Failing</p>
-						<img src="images/failing.png" >
-					</section>
-
-					<section>
-						<p>Passing</p>
-						<img src="images/passing.png">
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h2>Litmus</h2>	
-						
-						<h4>Visual testing</h4>
-						<ul>
-							<li class="fragment">
-								<span>Desktop Clients</span>
-								<ul>
-									<li>Apple Mail 7/8</li>
-									<li>Outlook 2003/2007/2010/2013</li>
-								</ul>
-							</li>
-							<li class="fragment">
-								<span>Web-based Clients</span>
-								<ul>
-									<li>Outlook.com</li>
-									<li>Yahoo! Mail</li>
-									<li>Gmail</li>
-								</ul>
-							</li>
-							<li class="fragment">
-								<span>Mobile Clients</span>
-								<ul>
-									<li>iPad</li>
-									<li>iPad Mini</li>
-									<li>iPhone 5s/6/6+</li>
-									<li>Android Gmail App</li>
-								</ul>
-							</li>
-						</ul>
-					</section>
-
-					<section>
-						<img src="images/litmus.png" />
-					</section>
-				</section>
-
 
 			</div>
 
