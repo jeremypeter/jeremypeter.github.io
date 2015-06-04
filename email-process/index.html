@@ -50,31 +50,11 @@
         </section>
         <!-- slide 1 -->
 
-        <!-- <section>
-          <section>
-            <h1>Code Editor</h1> 
-            <h2>Sublime Text</h2>
-            <img src="http://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png" >
-          </section>
-
-          <section>
-            <ul>
-              <li>Plugin ecosystem</li>
-              <li>Boilerplates</li>
-              <li>Code snippets</li>
-            </ul>
-          </section>
-
-          <section id="snippets">
-            <p>Bullet list snippet</p>
-            <img src="../images/snippets.gif" >
-          </section>
-        </section> -->
-
         <section>
 
           <section>
-            <h2>Boilerplates and Code Snippets</h2>
+            <h1>Boilerplates</h1>
+            <p>No need to rebuild from scratch every time!</p>
           </section>
 
           <section>
@@ -87,9 +67,26 @@
             </ul>
           </section>
 
-          <section>
-            <p>Example of global styles</p>
-            <img src="../images/boilerplate-global-styles.png" />
+          <section data-markdown>
+            <script type="text/template">
+              ### Example of global styles
+              ```css
+              .main-td { 
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                color: #000001;
+                line-height: 16px;
+                min-width: 650px;/*android fix*/
+              }
+
+              .h1 { font-size: 22px; line-height: 26px; color: #003479; font-weight: bold; }
+              .h2 { font-size: 16px; line-height: 20px; color: #003479; font-weight: bold; }
+              .h3 { font-size: 14px; line-height: 18px; color: #003479; font-weight: bold; }
+
+              .p,
+              .ul { padding-bottom: 15px; }
+              ```
+            </script>
           </section>
 
           <section>
@@ -100,26 +97,104 @@
             </ul>
           </section>
 
-          <section>
-            <p>Example of client specific styles</p>
-            <img src="../images/boilerplate-client-styles.png" height="432" width="765" alt="">
+          <section data-markdown>
+            <script type="text/template">
+              ### Example of client specific styles
+              ```css
+              body { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} 
+              /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/ 
+
+              * { line-height: inherit; }
+              /* Prevent Outlook.com from overriding line-height */
+              ```
+            </script>
           </section>
 
-          <section>
-            <h2>Prestructured HTML</h2>
-            <img src="../images/boilerplate-html.png" height="318" width="532" alt="">
+          <section data-markdown>
+            <script type="text/template">
+              ### Pre-structured HTML
+              ```html
+              <tr>
+                <td class="main-td">
+                  <table>
+                    <tr>
+                      <td class="preheader">...</td>
+                    </tr>
+
+                    <tr>
+                      <td class="header">...</td>
+                    </tr>
+
+                    <tr>
+                      <td class="content">...</td>
+                    </tr>
+
+                    <tr>
+                      <td class="safety">...</td>
+                    </tr>
+
+                     <tr>
+                       <td class="footer">...</td>
+                     </tr>
+
+                  </table>
+                </td>
+              </tr>
+              ```
+            </script>
           </section>
           
-          <section>
+        </section>
+
+        <section>
+          <section> 
             <h1>Code Snippets</h1>
+            <p>Builds out HTML structures for us</p>
           </section>
           
-
           <section id="snippets">
             <p>Bullet list snippet</p>
             <img src="../images/snippets.gif" >
           </section>
-          
+        </section>
+
+        <section>
+          <section>
+            <h1>Templating</h1>
+            <p>Change one file, update many</p>
+          </section>
+
+          <section>
+            <h2>Supports:</h2>
+            <ul>
+              <li>
+                <strong>Partials</strong>
+                <ul>
+                  <li>Files that contain snippets of code that will be shared across multiple files</li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>Metadata</strong>
+                <ul>
+                  <li>Added at the top of the document. Data structure consisting of properties and values</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            
+            <img src="../images/templating.png" alt="">
+            <p>Partials example</p>
+          </section>
+  
+          <section>
+            <img src="../images/templating-metadata.png" alt="">
+            <p>Metadata example</p>
+          </section>
+
+
         </section>
 
 
@@ -129,18 +204,66 @@
             <h2>with Gulpjs</h2>
             <img src="../images/gulpjslogo.png" >
           </section>
+          
+          <section>
+            <h3>What does Gulpjs do for us?</h3>
+            <ol>
+              <li class="fragment">Watches for file changes</li>
+              <li class="fragment">Checks for HTML errors</li>
+              <li class="fragment">Compiles partials and metadata</li>
+              <li class="fragment">Auto-append tracking codes to urls</li>
+              <li class="fragment">Inlines css</li>
+              <li class="fragment">Minifies code</li>
+              <li class="fragment">Encodes special characters</li>
+              <li class="fragment">Auto-refreshes browser</li>
+              <li class="fragment">Tests code</li>
+              <li class="fragment">Creates final output file (email.html)</li>
+              <li class="fragment">Optional: send tests to Litmus</li>
+              <li class="fragment">Optional: send to email address</li>
+            </ol>
+          </section>
 
           <section>
-            <ol>
-              <li>Watches directory for changes</li>
-              <li>Checks for HTML errors</li>
-              <li>Inlines css</li>
-              <li>Minifies code</li>
-              <li>Encodes special characters</li>
-              <li>Tests code</li>
-              <li>Optional: send tests to Litmus</li>
-              <li>Optional: send to email address</li>
-            </ol>
+            <h3>Running gulp</h3>
+            <img src="../images/gulp.gif" alt="">
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Auto-append tracking codes
+              ```html
+              ---
+              query: cid=test&moc=test&c=test
+              ---
+              ```
+              **Before:** http://www.avastin.com
+
+              **After:** http://www.avastin.com/?cid=test&moc=test&c=test
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### Inline CSS
+
+              #### Before
+              ```html
+              <style>
+                .p { font-size: 12px; color: blue; }
+              </style>
+
+              <tr>
+                <td class="p">...</td>
+              </tr>
+              ```
+
+              #### After
+              ```html
+              <tr>
+                <td class="p" style="font-size: 12px; color: blue;">...</td>
+              </tr>
+              ```
+            </script>
           </section>
 
           <section>
@@ -149,7 +272,7 @@
           </section>
 
           <section>
-            <p>Minified code</p>
+            <p>Minified code - save 30-50% on file size</p>
             <img src="../images/minified.png" alt="">
           </section>
 
@@ -230,7 +353,28 @@
 
           <section>
             <img src="../images/litmus.png" />
+            <p>Thumbnail view</p>
           </section>
+
+          <section>
+            <img src="../images/litmus-full.png" alt="">
+            <p>Full screen view</p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Recap</h2>
+          <ul>
+            <li class="fragment">Boilerplates</li>
+            <li class="fragment">Code Snippets</li>
+            <li class="fragment">Templating</li>
+            <li class="fragment">Automation with Gulp</li>
+            <li class="fragment">Testing with Mocha and Litmus</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
         </section>
 
 
