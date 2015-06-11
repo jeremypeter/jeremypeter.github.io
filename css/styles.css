@@ -9,3 +9,32 @@
   max-height: 500px;
   padding: 1rem;
 }
+
+.reveal .wow {
+  font-size: 8em;
+  transform: rotate(35deg);
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  font-weight: bold;
+  color: #E6E72B;
+}
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(1);}
+  30% { -webkit-transform: scale(1); }
+  40% { -webkit-transform: scale(1.20); }
+  50% { -webkit-transform: scale(1); }
+  60% { -webkit-transform: scale(1); }
+  70% { -webkit-transform: scale(1.20); }
+  80% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.reveal .wow {
+  -webkit-animation-name: 'pulse_animation';
+  -webkit-animation-duration: 4000ms;
+  -webkit-transform-origin:50% 100%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}

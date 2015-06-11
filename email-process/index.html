@@ -46,7 +46,8 @@
         
         <section>
           <img src="http://meltmedia.com/assets/img/hero/hero-meltmedia-logo.png" style="width: 20%; height: auto;">
-          <h1>Email Process</h1>
+          <h1>Email Development Process</h1>
+          <p>All about saving time and being efficient</p>
         </section>
         <!-- slide 1 -->
 
@@ -71,18 +72,21 @@
             <script type="text/template">
               ### Example of global styles
               ```css
+              /* Main wrapper */
               .main-td { 
                 font-family: Helvetica, Arial, sans-serif;
                 font-size: 12px;
                 color: #000001;
                 line-height: 16px;
-                min-width: 650px;/*android fix*/
+                min-width: 650px;
               }
 
+              /* Header Styles */
               .h1 { font-size: 22px; line-height: 26px; color: #003479; font-weight: bold; }
               .h2 { font-size: 16px; line-height: 20px; color: #003479; font-weight: bold; }
               .h3 { font-size: 14px; line-height: 18px; color: #003479; font-weight: bold; }
 
+              /* Paragraph and Unordered List Styles */
               .p,
               .ul { padding-bottom: 15px; }
               ```
@@ -153,7 +157,7 @@
           </section>
           
           <section id="snippets">
-            <p>Bullet list snippet</p>
+            <p>Bulleted list snippet (tul + tab)</p>
             <img src="../images/snippets.gif" >
           </section>
         </section>
@@ -208,7 +212,7 @@
           <section>
             <h3>What does Gulpjs do for us?</h3>
             <ol>
-              <li class="fragment">Watches for file changes</li>
+              <li class="fragment">Watches for file changes (<em>template.html</em>)</li>
               <li class="fragment">Checks for HTML errors</li>
               <li class="fragment">Compiles partials and metadata</li>
               <li class="fragment">Auto-append tracking codes to urls</li>
@@ -217,10 +221,11 @@
               <li class="fragment">Encodes special characters</li>
               <li class="fragment">Auto-refreshes browser</li>
               <li class="fragment">Tests code</li>
-              <li class="fragment">Creates final output file (email.html)</li>
+              <li class="fragment">Creates final output file (<em>email.html</em>)</li>
               <li class="fragment">Optional: send tests to Litmus</li>
               <li class="fragment">Optional: send to email address</li>
             </ol>
+            <span class="fragment wow">WOW!</span>
           </section>
 
           <section>
@@ -293,46 +298,54 @@
         </section>
 
         <section>
+
+          <section>
+            <h1>Mocha</h1>
+            <p>Testing the HTML code</p>
+          </section>
             
           <section>
-            <h2>Mocha</h2>
-            <h4>Testing the code</h4>
+            <h2>Common test cases:</h2>
             <ul>
-              <li>Code minification</li>
-              <li>Special variables/tags</li>
-              <li>PRC code</li>
-              <li>Urls</li>
-              <li>MOC and CID codes</li>
+              <li class="fragment">Code minification</li>
+              <li class="fragment">Special variables/tags</li>
+              <li class="fragment">PRC code</li>
+              <li class="fragment">Validate links</li>
+              <li class="fragment">MOC and CID codes</li>
             </ul>
           </section>  
 
           <section>
-            <p>Failing</p>
+            <p>Failing Test</p>
             <img src="../images/failing.png" >
           </section>
 
           <section>
-            <p>Passing</p>
+            <p>Passing Test</p>
             <img src="../images/passing.png">
           </section>
 
         </section>
 
         <section>
+
           <section>
-            <h2>Litmus</h2> 
-            
-            <h4>Visual testing</h4>
+            <h1>Litmus App</h1> 
+            <p>Visual testing across email clients</p>
+          </section>
+
+          <section>
+            <h2>Supported Clients</h2>
             <ul>
               <li class="fragment">
-                <span>Desktop Clients</span>
+                <span><strong>Desktop Clients</strong></span>
                 <ul>
                   <li>Apple Mail 7/8</li>
                   <li>Outlook 2003/2007/2010/2013</li>
                 </ul>
               </li>
               <li class="fragment">
-                <span>Web-based Clients</span>
+                <span><strong>Web-based Clients</strong></span>
                 <ul>
                   <li>Outlook.com</li>
                   <li>Yahoo! Mail</li>
@@ -340,12 +353,38 @@
                 </ul>
               </li>
               <li class="fragment">
-                <span>Mobile Clients</span>
+                <span><strong>Mobile Clients</strong></span>
                 <ul>
                   <li>iPad</li>
                   <li>iPad Mini</li>
                   <li>iPhone 5s/6/6+</li>
-                  <li>Android Gmail App</li>
+                  <li>Gmail App (Android/iOS)</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>What we look for:</h2>
+            <ul>
+              <li class="fragment">
+                <span><strong>Visual issues</strong></span>
+                <ul>
+                  <li>Layout changes</li>
+                  <li>Auto-linking address/phone numbers/dates</li>
+                  <li>Fonts rendering properly</li>
+                  <li>Images not breaking</li>
+                </ul>
+              </li>
+              <li class="fragment">
+                <span><strong>Client specific issue</strong></span>
+                <ul>
+                  <li>Outlook page break issue</li>
+                  <li>Gmail/Yahoo! clipping issue</li>
+                  <li>Outlook spacing issues</li>
+                  <li>Yahoo! centering issue</li>
+                  <li>iOS/Gmail changing font size</li>
+                  <li>Gmail App adjusting width</li>
                 </ul>
               </li>
             </ul>
